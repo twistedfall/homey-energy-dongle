@@ -1,0 +1,38 @@
+[package]
+name = "homey-energy-dongle"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.87.0"
+description = "Homey Energy Dongle local API access"
+keywords = ["homey", "energy", "api", "automation", "homec"]
+categories = ["api-bindings", "network-programming", "asynchronous", "hardware-support"]
+authors = ["Pro <twisted.fall@gmail.com>"]
+license = "MIT OR Apache-2.0"
+documentation = "https://docs.rs/homey-energy-dongle"
+repository = "https://github.com/twistedfall/homey-energy-dongle"
+exclude = ["/.github", "/ci", "/tools", ".gitignore", "README.tpl", "release.toml", "rustfmt.toml"]
+
+[badges]
+maintenance = { status = "passively-maintained" }
+
+[dependencies]
+async-timer = { version = "0.7", optional = true }
+bytes = { version = "1", default-features = false }
+futures-util = "0.3"
+log = "0.4"
+mdns-sd = { version = "0.13", optional = true }
+reqwest = { version = "0.12", default-features = false, optional = true }
+reqwest-websocket = { version = "0.5", optional = true }
+
+[features]
+discover = [
+	"dep:async-timer",
+	"dep:mdns-sd",
+]
+websocket = [
+	"dep:reqwest",
+	"dep:reqwest-websocket",
+]
+
+[dev-dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
