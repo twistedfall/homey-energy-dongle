@@ -1,0 +1,24 @@
+name: homey_energy_dongle
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+jobs:
+  ci:
+    runs-on: ubuntu-24.04
+    env:
+      SCCACHE_GHA_ENABLED: "true"
+      RUSTC_WRAPPER: "sccache"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mozilla-actions/sccache-action@v0.0.8
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets --all-features --tests -- -D warnings
+
+      - name: Test
+        run: cargo test --workspace --all-targets --all-features
