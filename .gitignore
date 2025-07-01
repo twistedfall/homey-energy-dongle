@@ -1,3 +1,4 @@
 /target
 /*.js
 /README.tpl
+/Cargo.lock
