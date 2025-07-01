@@ -9,7 +9,7 @@ See [full documentation](https://docs.rs/homey-energy-dongle)
 Add this to your Cargo.toml:
 ```
 [dependencies]
-homey-energy-dongle = "0.3.0"
+homey-energy-dongle = "0.3.1"
 ```
 
 ![Maintenance](https://img.shields.io/badge/maintenance-passively--maintained-yellowgreen.svg)
