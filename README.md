@@ -1,20 +1,24 @@
 # homey-energy-dongle
 
-## Documentation
+[![Build Status](https://github.com/twistedfall/homey-energy-dongle/actions/workflows/homey-energy-dongle.yml/badge.svg)](https://github.com/twistedfall/homey-energy-dongle/actions/workflows/homey-energy-dongle.yml)
+[![Documentation](https://docs.rs/homey-energy-dongle/badge.svg)](https://docs.rs/homey-energy-dongle)
+[![Crates.io](https://img.shields.io/crates/v/homey-energy-dongle)](https://crates.io/crates/homey-energy-dongle)
+![Maintenance](https://img.shields.io/badge/maintenance-passively--maintained-yellowgreen.svg)
 
-See [full documentation](https://docs.rs/homey-energy-dongle)
+[Support the project](https://github.com/sponsors/twistedfall) | [Documentation](https://docs.rs/homey-energy-dongle)
+
 
 ## Usage
 
-Add this to your Cargo.toml:
+Run:
+```shell
+cargo add homey-energy-dongle
 ```
+Or add to your Cargo.toml:
+```toml
 [dependencies]
 homey-energy-dongle = "0.3.2"
 ```
-
-![Maintenance](https://img.shields.io/badge/maintenance-passively--maintained-yellowgreen.svg)
-[![Build Status](https://github.com/twistedfall/homey-energy-dongle/actions/workflows/homey-energy-dongle.yml/badge.svg)](https://github.com/twistedfall/homey-energy-dongle/actions/workflows/homey-energy-dongle.yml)
-[![Documentation](https://docs.rs/homey-energy-dongle/badge.svg)](https://docs.rs/homey-energy-dongle)
 
 ## Homey Energy Dongle local API access
 
@@ -70,4 +74,6 @@ async fn example() {
 [RawTelegramStream]: reader::RawTelegramStream
 [RawTelegram]: reader::RawTelegram
 
-License: MIT OR Apache-2.0
+## License
+
+MIT OR Apache-2.0
