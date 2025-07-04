@@ -10,7 +10,7 @@ authors = ["Pro <twisted.fall@gmail.com>"]
 license = "MIT OR Apache-2.0"
 documentation = "https://docs.rs/homey-energy-dongle"
 repository = "https://github.com/twistedfall/homey-energy-dongle"
-exclude = ["/.github", "/tools", "/Cargo.lock", ".gitignore", "README.tpl", "release.toml", "rustfmt.toml"]
+exclude = ["/.github", "/tools", "/Cargo.lock", ".gitignore", "release.toml", "rustfmt.toml"]
 
 [badges]
 maintenance = { status = "passively-maintained" }
