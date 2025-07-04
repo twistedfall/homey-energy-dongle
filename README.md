@@ -17,7 +17,7 @@ cargo add homey-energy-dongle
 Or add to your Cargo.toml:
 ```toml
 [dependencies]
-homey-energy-dongle = "0.3.2"
+homey-energy-dongle = "0.3.3"
 ```
 
 ## Homey Energy Dongle local API access
