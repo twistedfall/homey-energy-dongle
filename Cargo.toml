@@ -2,9 +2,9 @@
 name = "homey-energy-dongle"
 version = "0.3.3"
 edition = "2024"
-rust-version = "1.87.0"
+rust-version = "1.85.0"
 description = "Homey Energy Dongle local API access"
-keywords = ["homey", "energy", "api", "automation", "homec"]
+keywords = ["homey", "energy", "api", "automation", "home"]
 categories = ["api-bindings", "network-programming", "asynchronous", "hardware-support"]
 authors = ["Pro <twisted.fall@gmail.com>"]
 license = "MIT OR Apache-2.0"
