@@ -31,22 +31,14 @@ pub async fn discover_devices_with_mdns(timeout: Duration, max_hosts: usize) -> 
 	{
 		let discover = async {
 			while let Ok(event) = receiver.recv_async().await {
-				if let ServiceEvent::ServiceResolved(info) = event {
-					let svc = info.as_resolved_service();
-					let mut path = None;
-					let mut version = None;
-					for txt in svc.txt_properties.iter() {
-						match txt.key() {
-							"p" => path = Some(txt.val_str().to_string()),
-							"v" => version = Some(txt.val_str().to_string()),
-							_ => {}
-						}
-					}
+				if let ServiceEvent::ServiceResolved(svc) = event {
+					let path = svc.get_property_val_str("p").map(|s| s.to_string());
+					let version = svc.get_property_val_str("v").map(|s| s.to_string());
 					if let Some((path, version)) = path.zip(version) {
 						out.push(EnergyDongleHostInfo {
 							name: svc.fullname,
 							hostname: svc.host,
-							addresses: svc.addresses,
+							addresses: svc.addresses.into_iter().map(|addr| addr.to_ip_addr()).collect(),
 							port: svc.port,
 							path,
 							version,

@@ -7,7 +7,7 @@ use core::task::{Context, Poll, ready};
 use futures_util::{SinkExt, Stream, StreamExt};
 use log::{error, trace, warn};
 use reqwest::Client;
-use reqwest_websocket::{CloseCode, Message, RequestBuilderExt, WebSocket};
+use reqwest_websocket::{CloseCode, Message, Upgrade, WebSocket};
 
 use crate::Bytes;
 
